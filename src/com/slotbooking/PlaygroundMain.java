@@ -58,6 +58,7 @@ public class PlaygroundMain {
         Booking booking = new Booking.Builder()
                 .id("B101")
                 .slotId(slot1.getId())
+                .resourceId(slot1.getResourceId())
                 .consumerId(consumer.getId())
                 .status(BookingStatus.CONFIRMED)
                 .createdAt(LocalDateTime.now())

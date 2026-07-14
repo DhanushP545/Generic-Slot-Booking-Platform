@@ -7,6 +7,7 @@ public class Booking {
 
     private final String id;
     private final String slotId;
+    private final String resourceId;
     private final String consumerId;
     private final BookingStatus status;
     private final LocalDateTime createdAt;
@@ -14,6 +15,7 @@ public class Booking {
     private Booking(Builder builder) {
         this.id = builder.id;
         this.slotId = builder.slotId;
+        this.resourceId = builder.resourceId;
         this.consumerId = builder.consumerId;
         this.status = builder.status;
         this.createdAt = builder.createdAt;
@@ -23,6 +25,7 @@ public class Booking {
 
         private String id;
         private String slotId;
+        private String resourceId;
         private String consumerId;
         private BookingStatus status;
         private LocalDateTime createdAt;
@@ -37,6 +40,10 @@ public class Booking {
             return this;
         }
 
+        public Builder resourceId(String resourceId) {
+        	this.resourceId = resourceId;
+        	return this;
+        }
         public Builder consumerId(String consumerId) {
             this.consumerId = consumerId;
             return this;
@@ -63,6 +70,9 @@ public class Booking {
 
     public String getSlotId() {
         return slotId;
+    }
+    public String getResourceId() {
+    	return resourceId;
     }
 
     public String getConsumerId() {
