@@ -4,7 +4,7 @@ import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
-public final class Slot {
+public final class Slot implements Comparable<Slot>{
 
     private final String id;
     private final String resourceId;
@@ -46,6 +46,11 @@ public final class Slot {
 
     public SlotStatus getStatus() {
         return status;
+    }
+
+    @Override
+    public int compareTo(Slot other) {
+        return this.getStart().compareTo(other.getStart());
     }
 
     public long getDurationMinutes() {
